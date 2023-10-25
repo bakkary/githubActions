@@ -7,22 +7,11 @@
     <groupId>org.example</groupId>
     <artifactId>validator</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <properties>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <plugins>
+<build>
+    <finalName>
+        app
+    </finalName>
+<plugins>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -31,7 +20,7 @@
             <transformers>
                 <transformer
                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                    <mainClass>ValidatorTest.java
+                    <mainClass>validator/target/test-classes/ValidatorTest.class
                     </mainClass> <!-- Here you should put the main class of your application -->
                 </transformer>
             </transformers>
@@ -62,5 +51,22 @@
             </execution>
         </executions>
     </plugin>
-    </plugins>
+</plugins>
+</build>
+
+
+    <properties>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 </project>
